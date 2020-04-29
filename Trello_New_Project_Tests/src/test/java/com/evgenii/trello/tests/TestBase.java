@@ -64,12 +64,17 @@ public class TestBase {
 
     }
 
-    public void initLogin(By locator) {
-        click(locator);
-    }
-
     public void click(By locator) {
         wd.findElement(locator).click();
+    }
+    public void createBoardMethod(){
+        createBoardTeam(By.name("add"));
+        createBoard(By.className("_2jR0BZMM5cBReR"));
+        fillNameBoard("111155");
+        click(By.name("down"));
+        click(By.xpath("//li[1]/button[@class='_2jR0BZMM5cBReR']"));
+        confirmBoardCreation(By.className("_3UeOvlU6B5KUnS"));
+        returnToHomePage();
     }
 
 
@@ -114,5 +119,37 @@ public class TestBase {
 
     public void continueTeamCretaion(By locator) {
         click(locator);
+    }
+
+    public void permanentlyDeleteClose() {
+        click(By.cssSelector(".js-delete"));
+        confirm();
+    }
+
+    public void initBoardDeletionInMoreMenu() {
+        clickCloseBoardFromMoreMenu();
+        confirm();
+
+    }
+
+    public void confirm() {
+        click(By.cssSelector(".js-confirm "));
+    }
+
+    public void clickCloseBoardFromMoreMenu() {
+        click(By.cssSelector(".js-close-board"));
+    }
+
+    public void clickMoreButton() {
+        click(By.cssSelector(".js-open-more"));
+    }
+
+    public void openFirstPersonalBoard() {
+        click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
+    }
+
+    public int getBoardsCount() {
+        return wd.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li")).size()-1;
+
     }
 }
