@@ -19,8 +19,7 @@ public class TestBase {
         wd.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         wd.manage().window().maximize();
         wd.navigate().to("https://trello.com/");
-
-
+        login("kozinevgenii85@gmail.com", "Stekla136");
 
     }
 
@@ -47,7 +46,7 @@ public class TestBase {
     }
 
 
-    public void fillBoardForm(String nameBoard) {
+    public void fillNameBoard(String nameBoard) {
         type(By.className("_23NUW98LaZfBpQ"), nameBoard);
     }
 
@@ -55,9 +54,9 @@ public class TestBase {
         click(locator);
     }
 
-    public void returnToHomePage(By locator) {
-        click(locator);
-        click(locator);
+    public void returnToHomePage() {
+        click(By.name("house"));
+        click(By.name("house"));
     }
 
     public void confirmLogin(By locator) {
@@ -82,19 +81,19 @@ public class TestBase {
         click(locator);
     }
 
-    public void teamNameFillForm(By locator) {
-        type(locator, "Evgenii");
+    public void teamNameFillForm(By locator, String teamName) {
+        type(locator, teamName);
     }
 
     public void teamTypeDropDown(By locator) {
         click(locator);
     }
 
-    public void TeamDescriptionFillForm(By locator) {
+    public void teamDescriptionFillForm(By locator) {
         type(locator, "New my team");
     }
 
-    public void TeamMembers(By locator) {
+    public void teamMembers(By locator) {
         type(locator, "kozinevgenii85@gmail.com");
     }
 
@@ -102,5 +101,18 @@ public class TestBase {
         click(locator);
         click(locator);
     }
+    public void login(String email, String password) {
+        clickLogIn(By.cssSelector("a.btn.btn-sm.btn-link"));
+        fillLoginForm(email, password);
+        clickLogIn(By.cssSelector("input#login"));
+    }
 
+
+    public void createTeam(By locator) {
+        click(locator);
+    }
+
+    public void continueTeamCretaion(By locator) {
+        click(locator);
+    }
 }
