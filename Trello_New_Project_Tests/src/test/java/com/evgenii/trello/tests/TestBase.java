@@ -76,6 +76,18 @@ public class TestBase {
         confirmBoardCreation(By.className("_3UeOvlU6B5KUnS"));
         returnToHomePage();
     }
+    public void teamCreationMethod(){
+        createBoardTeam(By.name("add"));
+        createTeam(By.xpath("//button[@data-test-id='header-create-team-button']"));
+        teamNameFillForm(By.className("_1CLyNodCAa-vQi"), "Evgenii");
+        confirmLogin(By.className("css-3gw83x"));
+        teamTypeDropDown(By.xpath("//div[@data-test-id='header-create-team-type-input-operations']"));
+        teamDescriptionFillForm(By.className("_15aIJYNKhrO4vB"));
+        continueTeamCretaion(By.className("_1aS0LdGertk5P7"));
+        teamMembers(By.className("autocomplete-input"));
+        InviteToTeam(By.xpath("//button[@class='autocomplete-btn primary fullWidthButton']"));
+        returnToHomePage();
+    }
 
 
     public void createBoard(By locator) {
@@ -151,5 +163,51 @@ public class TestBase {
     public int getBoardsCount() {
         return wd.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li")).size()-1;
 
+    }
+
+
+
+    public int getTeamCounts() {
+        return wd.findElements(By.xpath("//span[@data-test-id='home-team-tab-name']")).size();
+    }
+
+    public void openFirstTeam() {
+        click(By.xpath("//span[@data-test-id='home-team-tab-name']"));
+        click(By.xpath("//li[@class='pgEbaAFZBA0N5R']//li[4]"));
+    }
+
+    public void editTeamProfile() {
+        click(By.className("css-j8fq0c"));
+    }
+
+    public void editNameProfile() {
+        click(By.id("displayName"));
+        teamNameFillForm(By.id("displayName"), "VasiaTeam");
+    }
+
+    public void saveEditNameProfile() {
+        click(By.className("css-1ool8lk"));
+    }
+
+    public void changeTeamVisibility() {
+        click(By.xpath("//a[@class='button-link u-text-align-center']"));
+        click(By.xpath("//a[@class='highlight-icon js-select-public']//span[@class='icon-sm icon-public']"));
+    }
+
+    public void inviteToBoard() {
+        click(By.className("js-open-manage-board-members"));
+        type(By.className("autocomplete-input"), "kozinevgenii85@gmail.com");
+        click(By.className("autocomplete-btn"));
+    }
+
+    public void addNewList() {
+        click(By.xpath("//a[@class='open-add-list js-open-add-list']"));
+        type(By.xpath("//input[@class='list-name-input']"), "New list");
+        click(By.xpath("//input[@type='submit']"));
+    }
+
+    public void deleteThisTeam() {
+        click(By.className("quiet-button"));
+        confirm();
     }
 }
