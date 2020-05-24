@@ -1,5 +1,6 @@
 package com.evgenii.trello.tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,10 +9,16 @@ public class BoardDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions(){
+            if (!isOnBoardsPage()){
+                click(By.xpath("[href$=boards]"));
+
+            }
         if(getBoardsCount()==0){
             createBoardMethod();
         }
     }
+
+
 
     @Test
     public void testBoardDeletion() throws InterruptedException {

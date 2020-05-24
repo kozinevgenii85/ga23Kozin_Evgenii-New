@@ -12,6 +12,7 @@ public class TeamCreationsTests extends TestBase{
         createTeam(By.xpath("//button[@data-test-id='header-create-team-button']"));
         teamNameFillForm(By.className("_1CLyNodCAa-vQi"), "Evgenii");
         confirmLogin(By.className("css-3gw83x"));
+        inviteTeamLater();
         teamTypeDropDown(By.xpath("//div[@data-test-id='header-create-team-type-input-operations']"));
         teamDescriptionFillForm(By.className("_15aIJYNKhrO4vB"));
         continueTeamCretaion(By.className("_1aS0LdGertk5P7"));
