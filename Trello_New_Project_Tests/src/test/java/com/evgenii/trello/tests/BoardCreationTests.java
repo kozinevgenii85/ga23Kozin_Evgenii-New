@@ -1,7 +1,6 @@
 package com.evgenii.trello.tests;
 
 
-import okhttp3.Route;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -11,30 +10,30 @@ public class BoardCreationTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions(){
-        if (!isOnBoardsPage()){
-            click(By.xpath("[href$=boards]"));
+        if (!app.isOnBoardsPage()){
+            app.click(By.xpath("[href$=boards]"));
 
         }
-        if(getBoardsCount()==0){
-            createBoardMethod();
+        if(app.getBoardsCount()==0){
+            app.createBoardMethod();
         }
     }
 
         @Test
         public void testBoardCreation() throws InterruptedException {
-            int before = getBoardsCount();
+            int before = app.getBoardsCount();
             Thread.sleep(3000);
-            createBoardTeam(By.name("add"));
-            createBoard(By.className("_2jR0BZMM5cBReR"));
-            fillNameBoard("111155");
-            click(By.name("down"));
-            click(By.xpath("//li[1]/button[@class='_2jR0BZMM5cBReR']"));
-            confirmBoardCreation(By.className("_3UeOvlU6B5KUnS"));
+            app.createBoardTeam(By.name("add"));
+            app.createBoard(By.className("_2jR0BZMM5cBReR"));
+            app.fillNameBoard("111155");
+            app.click(By.name("down"));
+            app.click(By.xpath("//li[1]/button[@class='_2jR0BZMM5cBReR']"));
+            app.confirmBoardCreation(By.className("_3UeOvlU6B5KUnS"));
 
-            returnToHomePage();
+            app.returnToHomePage();
             Thread.sleep(3000);
 
-            int after = getBoardsCount();
+            int after = app.getBoardsCount();
             System.out.println("was: " +before+ " now: " +after);
             Assert.assertEquals(after, before+1);
 

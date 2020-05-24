@@ -1,6 +1,5 @@
 package com.evgenii.trello.tests;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class TeamEditTests extends TestBase {
@@ -8,18 +7,18 @@ public class TeamEditTests extends TestBase {
     @Test
     public void testTeamEdit() throws InterruptedException {
         //firstTeamInList
-        openFirstTeam();
+        app.openFirstTeam();
         //editTeamProfile
-        editTeamProfile();
+        app.editTeamProfile();
         //editNameProfile
-        editNameProfile();
+        app.editNameProfile();
         //saveEditNameProfile
-        saveEditNameProfile();
+        app.saveEditNameProfile();
         //changeTeamVisibility
-        changeTeamVisibility();
+        app.changeTeamVisibility();
 
         Thread.sleep(3000);
-        returnToHomePage();
+        app.returnToHomePage();
         Thread.sleep(3000);
 
 

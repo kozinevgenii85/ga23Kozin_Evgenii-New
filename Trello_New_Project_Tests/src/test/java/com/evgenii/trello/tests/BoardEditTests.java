@@ -9,19 +9,19 @@ public class BoardEditTests extends TestBase {
     @Test
     public void editBoardTest() throws InterruptedException {
 
-        openFirstPersonalBoard();
+        app.openFirstPersonalBoard();
         //addList
         int before = getEditBoardsCount();
-        addNewList();
+        app.addNewList();
         //inviteToBoard
-        inviteToBoard();
+        app.inviteToBoard();
         int after = getEditBoardsCount();
         System.out.println("saw:" +before+ " now: " +after);
         Assert.assertEquals(after, before+1);
 
 
         Thread.sleep(3000);
-        returnToHomePage();
+        app.returnToHomePage();
         Thread.sleep(3000);
 
 
@@ -33,7 +33,7 @@ public class BoardEditTests extends TestBase {
     }
 
     private int getEditBoardsCount() {
-        return wd.findElements(By.className("list")).size();
+        return app.wd.findElements(By.className("list")).size();
     }
 
 }

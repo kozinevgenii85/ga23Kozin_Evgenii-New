@@ -8,17 +8,17 @@ public class TeamCreationsTests extends TestBase{
 
     @Test
     public void testCreationTeam() throws InterruptedException {
-        createBoardTeam(By.name("add"));
-        createTeam(By.xpath("//button[@data-test-id='header-create-team-button']"));
-        teamNameFillForm(By.className("_1CLyNodCAa-vQi"), "Evgenii");
-        confirmLogin(By.className("css-3gw83x"));
-        inviteTeamLater();
-        teamTypeDropDown(By.xpath("//div[@data-test-id='header-create-team-type-input-operations']"));
-        teamDescriptionFillForm(By.className("_15aIJYNKhrO4vB"));
-        continueTeamCretaion(By.className("_1aS0LdGertk5P7"));
-        teamMembers(By.className("autocomplete-input"));
-        InviteToTeam(By.xpath("//button[@class='autocomplete-btn primary fullWidthButton']"));
-        returnToHomePage();
+        app.createBoardTeam(By.name("add"));
+        app.createTeam(By.xpath("//button[@data-test-id='header-create-team-button']"));
+        app.teamNameFillForm(By.className("_1CLyNodCAa-vQi"), "Evgenii");
+        app.confirmLogin(By.className("css-3gw83x"));
+        //app.inviteTeamLater();
+        app.teamTypeDropDown(By.xpath("//div[@data-test-id='header-create-team-type-input-sales crm']"));
+        app.teamDescriptionFillForm(By.className("_15aIJYNKhrO4vB"));
+        app.continueTeamCretaion(By.className("_1aS0LdGertk5P7"));
+        app.teamMembers(By.className("autocomplete-input"));
+        app.InviteToTeam(By.xpath("//button[@class='autocomplete-btn primary fullWidthButton']"));
+        app.returnToHomePage();
         Thread.sleep(3000);
 
 

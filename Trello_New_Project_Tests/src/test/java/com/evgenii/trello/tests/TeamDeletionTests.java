@@ -1,8 +1,6 @@
 package com.evgenii.trello.tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TeamDeletionTests extends TestBase{
@@ -20,16 +18,16 @@ public class TeamDeletionTests extends TestBase{
     public void testTeamDeletion() throws InterruptedException {
 
 
-        int before = getTeamCounts();
+        int before = app.getTeamCounts();
         //openFirstTeam
-        openFirstTeam();
+        app.openFirstTeam();
         //deleteThisTeam
-        deleteThisTeam();
+        app.deleteThisTeam();
         Thread.sleep(3000);
-        returnToHomePage();
+        app.returnToHomePage();
 
         Thread.sleep(3000);
-        int after = getTeamCounts();
+        int after = app.getTeamCounts();
         System.out.println(" was: " + before + " now: " + after);
         Assert.assertEquals(after, before - 1);
 
