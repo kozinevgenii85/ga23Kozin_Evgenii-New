@@ -1,4 +1,4 @@
-package com.evgenii.trello.tests;
+package com.evgenii.trello.tests.tests;
 
 import org.testng.annotations.Test;
 
@@ -7,18 +7,18 @@ public class TeamEditTests extends TestBase {
     @Test
     public void testTeamEdit() throws InterruptedException {
         //firstTeamInList
-        app.openFirstTeam();
+        app.getTeam().openFirstTeam();
         //editTeamProfile
-        app.editTeamProfile();
+        app.getTeam().editTeamProfile();
         //editNameProfile
-        app.editNameProfile();
+        app.getTeam().editNameProfile();
         //saveEditNameProfile
-        app.saveEditNameProfile();
+        app.getTeam().saveEditNameProfile();
         //changeTeamVisibility
-        app.changeTeamVisibility();
+        app.getTeam().changeTeamVisibility();
 
         Thread.sleep(3000);
-        app.returnToHomePage();
+        app.getTeam().returnToHomePage();
         Thread.sleep(3000);
 
 

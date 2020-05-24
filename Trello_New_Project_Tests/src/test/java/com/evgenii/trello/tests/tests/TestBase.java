@@ -1,16 +1,16 @@
-package com.evgenii.trello.tests;
+package com.evgenii.trello.tests.tests;
 
-import org.testng.annotations.AfterMethod;
+import com.evgenii.trello.tests.framework.ApplicationManager;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 public class TestBase {
 
-    protected static ApplicationManager app = new ApplicationManager();
+    public static ApplicationManager app = new ApplicationManager();
 
     @BeforeSuite
     public void setUp(){
+
         app.init();
     }
 

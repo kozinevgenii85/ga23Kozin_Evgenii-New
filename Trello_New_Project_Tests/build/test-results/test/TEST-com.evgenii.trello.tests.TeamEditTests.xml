@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.evgenii.trello.tests.TeamEditTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T20:08:28" hostname="DESKTOP-455G7QE" time="8.963">
+<testsuite name="com.evgenii.trello.tests.TeamEditTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T21:40:25" hostname="DESKTOP-455G7QE" time="9.011">
   <properties/>
-  <testcase name="testTeamEdit" classname="com.evgenii.trello.tests.TeamEditTests" time="8.963"/>
+  <testcase name="testTeamEdit" classname="com.evgenii.trello.tests.TeamEditTests" time="9.011"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

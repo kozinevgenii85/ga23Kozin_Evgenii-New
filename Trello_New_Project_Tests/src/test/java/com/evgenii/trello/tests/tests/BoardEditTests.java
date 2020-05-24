@@ -1,7 +1,5 @@
-package com.evgenii.trello.tests;
+package com.evgenii.trello.tests.tests;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BoardEditTests extends TestBase {
@@ -9,15 +7,15 @@ public class BoardEditTests extends TestBase {
     @Test
     public void editBoardTest() throws InterruptedException {
 
-        app.openFirstPersonalBoard();
+        app.getBoard().openFirstPersonalBoard();
         Thread.sleep(3000);
         //addList
        //int before = getEditBoardsCount();
         //Thread.sleep(3000);
-        app.addNewList();
+        app.getBoard().addNewList();
         Thread.sleep(3000);
        //inviteToBoard
-       app.inviteToBoard();
+       app.getBoard().inviteToBoard();
 //       int after = getEditBoardsCount();
 //        Thread.sleep(3000);
 //        System.out.println("saw:" +before+ " now: " +after);
@@ -25,7 +23,7 @@ public class BoardEditTests extends TestBase {
 
 
         Thread.sleep(3000);
-        app.returnToHomePage();
+        app.getBoard().returnToHomePage();
         Thread.sleep(3000);
 
 

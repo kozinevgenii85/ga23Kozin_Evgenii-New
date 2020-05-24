@@ -1,4 +1,4 @@
-package com.evgenii.trello.tests;
+package com.evgenii.trello.tests.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,16 +18,16 @@ public class TeamDeletionTests extends TestBase{
     public void testTeamDeletion() throws InterruptedException {
 
 
-        int before = app.getTeamCounts();
+        int before = app.getTeam().getTeamCounts();
         //openFirstTeam
-        app.openFirstTeam();
+        app. getTeam().openFirstTeam();
         //deleteThisTeam
-        app.deleteThisTeam();
+        app.getTeam().deleteThisTeam();
         Thread.sleep(3000);
-        app.returnToHomePage();
+        app.getTeam().returnToHomePage();
 
         Thread.sleep(3000);
-        int after = app.getTeamCounts();
+        int after = app.getTeam().getTeamCounts();
         System.out.println(" was: " + before + " now: " + after);
         Assert.assertEquals(after, before - 1);
 
