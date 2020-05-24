@@ -11,7 +11,7 @@ public class ApplicationManager {
     WebDriver wd;
     WebDriverWait wait;
 
-    public void init() {
+    protected void init() {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         wd.manage().window().maximize();
@@ -146,6 +146,7 @@ public class ApplicationManager {
     }
 
     public void clickMoreButton() {
+//        click(By.cssSelector(".js-show-sidebar"));
         click(By.cssSelector(".js-open-more"));
     }
 
@@ -154,7 +155,7 @@ public class ApplicationManager {
     }
 
     public int getBoardsCount() {
-        return wd.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li")).size()-1;
+        return wd.findElements(By.cssSelector("[.board-tile-details-name]")).size()-1;
 
     }
 
@@ -191,10 +192,13 @@ public class ApplicationManager {
         click(By.className("autocomplete-btn"));
     }
 
-    public void addNewList() {
-        click(By.xpath("//a[@class='open-add-list js-open-add-list']"));
-        type(By.xpath("//input[@class='list-name-input']"), "New list");
+    public void addNewList() throws InterruptedException {
+        click(By.xpath("//span[@class = 'placeholder']"));
+        Thread.sleep(3000);
+        type(By.xpath("//input[@name = 'name']"), "New list");
+        Thread.sleep(3000);
         click(By.xpath("//input[@type='submit']"));
+        Thread.sleep(3000);
     }
 
     public void deleteThisTeam() {

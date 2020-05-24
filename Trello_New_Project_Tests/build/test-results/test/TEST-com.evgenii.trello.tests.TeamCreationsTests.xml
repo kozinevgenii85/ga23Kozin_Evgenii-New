@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.evgenii.trello.tests.TeamCreationsTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T12:39:02" hostname="DESKTOP-455G7QE" time="11.385">
+<testsuite name="com.evgenii.trello.tests.TeamCreationsTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-24T20:08:14" hostname="DESKTOP-455G7QE" time="6.623">
   <properties/>
-  <testcase name="testCreationTeam" classname="com.evgenii.trello.tests.TeamCreationsTests" time="11.385"/>
+  <testcase name="testCreationTeam" classname="com.evgenii.trello.tests.TeamCreationsTests" time="6.623"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}) on port 32143
-Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-мая 24, 2020 3:38:54 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-[1590323937.629][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323937.730][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323938.123][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323938.268][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323938.572][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323938.674][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323938.945][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323939.125][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323939.258][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323939.360][SEVERE]: Timed out receiving message from renderer: 0.100
-[1590323945.279][SEVERE]: Timed out receiving message from renderer: 0.100
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
