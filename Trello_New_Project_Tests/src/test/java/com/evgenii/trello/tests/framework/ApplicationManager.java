@@ -11,6 +11,7 @@ WebDriver wd;
     TeamHelper team;
     HelperBase helper;
     SessionHelper session;
+    NavigationHalper navigation;
 
     public void init() {
         wd = new ChromeDriver();
@@ -23,6 +24,7 @@ WebDriver wd;
         board = new BoardHelper(wd);
         team = new TeamHelper(wd);
         helper = new HelperBase(wd);
+        navigation = new NavigationHalper(wd);
     }
 
     public void stop() {
@@ -41,5 +43,9 @@ WebDriver wd;
 
     public SessionHelper getSesion() {
         return session;
+    }
+
+    public NavigationHalper getNavigation() {
+        return navigation;
     }
 }
