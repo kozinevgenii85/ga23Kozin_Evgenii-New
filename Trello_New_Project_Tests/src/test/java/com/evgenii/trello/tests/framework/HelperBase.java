@@ -2,11 +2,12 @@ package com.evgenii.trello.tests.framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperBase {
     WebDriver wd;
-    WebDriverWait wait;
+
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
@@ -18,20 +19,20 @@ public class HelperBase {
     }
 
     public void returnToHomePage() {
-        click(By.name("house"));
-        click(By.name("house"));
+        click(By.name("house"), 5);
+        click(By.name("house"), 5);
     }
 
-    public void click(By locator) {
-        wd.findElement(locator).click();
+    public void click(By locator, int timeOutSec) {
+        new WebDriverWait(wd, timeOutSec).until(ExpectedConditions.presenceOfElementLocated(locator)).click();
     }
 
     public void createBoardTeam(By locator) {
-        click(locator);
+        click(locator, 5);
     }
 
     public void confirm() {
-        click(By.cssSelector(".js-confirm "));
+        click(By.cssSelector(".js-confirm "), 5);
     }
 
     public boolean isElementPresent(By locator){

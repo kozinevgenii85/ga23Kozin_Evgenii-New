@@ -26,7 +26,7 @@ public class TeamHelper extends HelperBase {
     }
 
     public void teamTypeDropDown(By locator) {
-        click(locator);
+        click(locator, 5);
     }
 
     public void teamDescriptionFillForm(By locator) {
@@ -38,53 +38,53 @@ public class TeamHelper extends HelperBase {
     }
 
     public void InviteToTeam(By locator) {
-        click(locator);
-        click(locator);
+        click(locator, 5);
+        click(locator, 5);
     }
 
     public void createTeam(By locator) {
-        click(locator);
+        click(locator, 5);
     }
 
     public void continueTeamCretaion(By locator) {
-        click(locator);
+        click(locator, 5);
     }
 
-    public int getTeamCounts() {
+    public int getTeamDeletedCounts() {
         return wd.findElements(By.xpath("//span[@data-test-id='home-team-tab-name']")).size();
-    }
+}
 
     public void openFirstTeam() {
-        click(By.xpath("//span[@data-test-id='home-team-tab-name']"));
-        click(By.xpath("//li[@class='pgEbaAFZBA0N5R']//li[4]"));
+        click(By.xpath("//span[@data-test-id='home-team-tab-name']"), 5);
+        click(By.xpath("//li[@class='pgEbaAFZBA0N5R']//li[4]"), 5);
     }
 
     public void editTeamProfile() {
-        click(By.className("css-j8fq0c"));
+        click(By.className("css-j8fq0c"), 5);
     }
 
     public void editNameProfile() {
-        click(By.id("displayName"));
+        click(By.id("displayName"), 5);
         teamNameFillForm(By.id("displayName"), "VasiaTeam");
     }
 
     public void saveEditNameProfile() {
-        click(By.className("css-1ool8lk"));
+        click(By.className("css-1ool8lk"), 5);
     }
 
     public void changeTeamVisibility() {
-        click(By.xpath("//a[@class='button-link u-text-align-center']"));
-        click(By.xpath("//a[@class='highlight-icon js-select-public']//span[@class='icon-sm icon-public']"));
+        click(By.xpath("//a[@class='button-link u-text-align-center']"), 5);
+        click(By.xpath("//a[@class='highlight-icon js-select-public']//span[@class='icon-sm icon-public']"), 5);
     }
 
     public void deleteThisTeam() {
-        click(By.className("quiet-button"));
+        click(By.className("quiet-button"), 5);
         confirm();
     }
 
     public void inviteTeamLater(){
         if(isElementPresent(By.cssSelector("[data-test-id=show-later-button]"))){
-            click(By.cssSelector("[data-test-id=show-later-button]"));
+            click(By.cssSelector("[data-test-id=show-later-button]"), 5);
         }
     }
 

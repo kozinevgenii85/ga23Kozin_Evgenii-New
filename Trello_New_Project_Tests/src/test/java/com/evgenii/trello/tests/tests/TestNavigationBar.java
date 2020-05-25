@@ -8,6 +8,6 @@ public class TestNavigationBar extends TestBase {
     @Test
     public void navigationBarTest(){
 
-        app.getNavigation().click(By.xpath(""));
+        app.getNavigation().click(By.xpath(""), 5);
     }
 }
